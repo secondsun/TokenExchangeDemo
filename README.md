@@ -4,7 +4,7 @@ Token Exchange Demo with KeyClaok
 # Setup
 You will need to setup a project in Google's cloud system as well as download a google-services.json file.  The documentation on that is here [https://developers.google.com/identity/protocols/OAuth2](https://developers.google.com/identity/protocols/OAuth2).
 
-After you have OAuth inside of Google setup you will need to update TokenExchange.java and put your Client ID from google in place of the string "CLIENT_ID_HERE".  Also you will need to add your Google-services.json to the app root.
+You will need to add your Google-services.json to the app root and setup the google play services plugin.
 
 # KeyCloak Setup
 I have my own keycloak servicing this app; however, you may wish to configure your own.  I followed the instructions in the KeyCloak docs here : [http://www.keycloak.org/docs/latest/securing_apps/index.html#external-token-to-internal-token-exchange](http://www.keycloak.org/docs/latest/securing_apps/index.html#external-token-to-internal-token-exchange).
