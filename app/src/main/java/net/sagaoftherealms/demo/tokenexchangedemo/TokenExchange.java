@@ -77,18 +77,15 @@ public class TokenExchange extends AppCompatActivity {
 
     private void startExchange() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("CLIENT_ID_HERE")
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestScopes(new Scope(Scopes.PROFILE), new Scope(Scopes.PLUS_ME), new Scope(Scopes.EMAIL))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account == null || account.getIdToken() == null) {
-            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-            startActivityForResult(signInIntent, RC_SIGN_IN);
-            return;
-        }
-        exchangeTokens(account);
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+        return;
+
     }
 
 
